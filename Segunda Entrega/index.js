@@ -47,3 +47,26 @@ const pizzas = [
     ingredientes: ["Muzzarella", "Tomate", "Anana"],
   },
 ];
+
+// A -
+const pizzasIdImpar = () =>{
+  pizzas.forEach((pizzas) => {
+    if(pizzas.id % 2 === 1){
+      console.log(`pizzas '${pizzas.nombre}' tiene iD impar, ${pizzas.id}`);
+    }
+  })
+}
+
+pizzasIdImpar()
+
+
+// B -
+const pizza600 = () => {
+  pizzas.forEach((pizzas) => {
+    if(pizzas.precio < 600){
+      console.log(`pizzas '${pizzas.nombre}' sale menos de 600`);
+    }
+  })
+}
+
+pizza600 ()
