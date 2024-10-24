@@ -48,11 +48,12 @@ const pizzas = [
   },
 ];
 
+
 // A -
 const pizzasIdImpar = () =>{
   pizzas.forEach((pizzas) => {
     if(pizzas.id % 2 === 1){
-      console.log(`pizzas '${pizzas.nombre}' tiene iD impar, ${pizzas.id}`);
+      console.log(`${pizzas.nombre}' tiene iD impar, ${pizzas.id}`);
     }
   })
 }
@@ -61,12 +62,29 @@ pizzasIdImpar()
 
 
 // B -
-const pizza600 = () => {
-  pizzas.forEach((pizzas) => {
-    if(pizzas.precio < 600){
-      console.log(`pizzas '${pizzas.nombre}' sale menos de 600`);
-    }
+const pizzasMenosde600 = pizzas.some((pizza) => pizza.precio < 600)
+  pizzasMenosde600 ?
+    console.log('Hay pizzas de menos de $600')
+    :
+    console.log('No hay pizzas de menos de $600')
+
+
+// C -
+const preciospizzas = () => {
+  pizzas.forEach((pizza) => {
+    console.log(`El precio de la ${pizza.nombre} es: ${pizza.precio}`);
+    
   })
 }
 
-pizza600 ()
+preciospizzas ()
+
+
+// D -
+const ingredientesPizza = () => {
+  pizzas.forEach((pizza) => {
+    console.log(`Los ingredientes de la ${pizza.nombre} son: ${pizza.ingredientes.join(', ')}`);
+  })
+}
+
+ingredientesPizza ()
